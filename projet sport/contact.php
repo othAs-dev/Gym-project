@@ -88,6 +88,7 @@ session_start();
                     <label class="form-label" for="email"></label>
                 </div>
                 </div>
+                
                 <!-- number input -->
                 <div class="col">
                 <div class="form-outline mb-4">
@@ -107,6 +108,7 @@ session_start();
                 <textarea class="form-control bg-light" id="form6Example7" name="message" rows="4" placeholder="MESSAGE"></textarea>
                 <label class="form-label" for="form6Example7">Additional information</label>
             </div>
+
             <!-- Submit button -->
             <input type="submit" value=" Envoyer" class="btn text-white btn-block mb-4 btn-1" />
         </form>

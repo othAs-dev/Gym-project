@@ -16,10 +16,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
-  font-size: 1.1rem;
   background: var(--navbar-bg-color);
   color: var(--navbar-color);
+}
+.navbar-nav {
+  font-size: 13px !important;
 }
 .navbar__links {
   display: flex;
@@ -265,5 +266,10 @@ a:hover {
   }
   .mb {
     margin-bottom: 12px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .navbar-nav {
+    margin-left: 100px !important;
   }
 }

@@ -18,7 +18,7 @@
     || empty($_POST["tel"]) || empty($_POST["sujet"]) || empty($_POST["message"])){
         header("Location: ../contact.php?add=0");
     }else {
-            $sql = "INSERT INTO user (lastname, firstname, email, message) VALUES ('$nom', '$prenom', '$email', '$msg')";  
+            $sql = "INSERT INTO user (lastname, firstname, email, message) VALUES ('$nom', '$prenom', '$email', '$msg' )";  
             if (mysqli_query($link, $sql)) {
                 header("refresh:0; url=../contact.php?add=1");
                 exit();

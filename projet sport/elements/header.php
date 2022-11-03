@@ -51,9 +51,9 @@
             <header class = "bgImg-2">
         </header>
         <?php endif; ?>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top nav-fixed ">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top nav-fixed">
             <div class="navbar-collapse" id="navbarSupportedContent">
-                <a class="navbar-brand text-white pr-5" href="index.php">
+                <a class="navbar-brand text-white pr-1" href="index.php">
                     <img src="./images/logo.png">
                 </a>
                 <button class="burger">

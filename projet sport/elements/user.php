@@ -5,7 +5,7 @@
 <?php 
 $link =  mysqli_connect("localhost", "otthmane", "" , "user");
 $id = $_GET["id"];
-$sql = "SELECT id, lastname, firstname, email, message FROM `user` WHERE id = $id";
+$sql = "SELECT id, email, password FROM `user` WHERE id = '$id'";
 $results = mysqli_query($link, $sql);
 $row = mysqli_fetch_assoc($results);
 $key = array_keys($row);
@@ -19,16 +19,19 @@ $key = array_keys($row);
         }
     echo"</tr>";
 ?>
-<?php if (isset($_GET["id"]) && $_GET["id"] == $id) : ?>
+<?php if (isset($_GET["id"]) && $row["id"] == $id) : ?>
     <tr>
-        <th scope='row'><?php echo $row["id"]?></th>
-        <td><?= $row["lastname"] ?></td>
-        <td><?= $row["firstname"] ?></td>
+    <?php echo "<td>{$id}</td>"; ?>
         <td><?= $row["email"] ?></td>
-        <td><?= $row["message"] ?></td>
+        <td><?= $row["password"] ?></td>
         <td>
             <button class="btn btn-danger">
                 <?php echo "<a href=./del.php?id=".$id.">Supprimer</a>"?>
+            </button>
+        </td>
+        <td>
+            <button class="btn btn-danger">
+                <?php echo "<a href=./auth.php?id=".$id.">Mettre à jour</a>"?>
             </button>
         </td>
     </tr>

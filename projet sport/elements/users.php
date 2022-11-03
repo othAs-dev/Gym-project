@@ -1,8 +1,9 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
 <?php 
     $link =  mysqli_connect("localhost", "otthmane", "" , "user");
-    $sql = "SELECT id, lastname, firstname, email, message FROM `user`";
+    $sql = "SELECT id, email, password FROM `user`";
     $results = mysqli_query($link, $sql);
     $numberOfUsers = mysqli_num_rows($results);
     $row = mysqli_fetch_assoc($results);
@@ -20,16 +21,12 @@
 <?php foreach($results as $x => $v) : ?>
     <?php 
     $id = $v["id"];
-    $lastname = $v["lastname"];
-    $firstname = $v["firstname"];
     $email = $v["email"];
-    $message = $v["message"];
+    $password = $v['password'];
     echo "<tr>";
         echo "<td><a href=./user.php?id=".$id.">{$id}</a></td>";
-        echo "<td> {$lastname} </td>";
-        echo "<td> {$firstname} </td>";
         echo "<td> {$email} </td>";
-        echo "<td> {$message} </td>";
+        echo "<td> {$password} </td>";
     echo "</tr>";
 ?>
 <?php endforeach; ?>
